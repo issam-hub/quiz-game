@@ -1,0 +1,180 @@
+body {
+    font-family: "Work Sans", sans-serif;
+    background-color: #ffebc6;
+    overflow: hidden;
+}
+
+.quiz {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: max(300px, 40%);
+    background-color: #ffdd00;
+    border-radius: 20px;
+}
+.question {
+    border-radius: 20px 20px 0 0;
+    background-color: #003844;
+    color: white;
+    padding: 25px 10px;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.answers {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+.answer {
+    display: flex;
+    align-items: center;
+    padding: 1px 5px;
+    border-radius: 27px;
+    background-color: rgb(239, 239, 239);
+    cursor: pointer;
+    transition: 0.3s;
+}
+.answer:hover {
+    background-color: white;
+}
+.answer:not(:last-child) {
+    margin-bottom: 10px;
+}
+.answer p {
+    padding-left: 50px;
+    font-size: 1.1rem;
+}
+.answer span {
+    padding: 5px 12px 5px 12px;
+    color: #006c67;
+    border: 4px solid #006c67;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.correct {
+    background-color: #29bf12;
+    color: white;
+    font-weight: bold;
+}
+
+.wrong {
+    background-color: #f21b3f;
+    color: white;
+    font-weight: bold;
+}
+
+.info {
+    display: flex;
+    width: max(350px, 40%);
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px auto;
+}
+.score,
+.remainQ {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+.remainQ i {
+    padding: 6px 10px 5px 10px;
+    border: 5px solid black;
+    border-radius: 7px;
+    margin-right: 10px;
+    background-color: white;
+}
+
+@keyframes moveBro {
+    from {
+        position: absolute;
+        left: 300px;
+        top: 30px;
+        font-size: 1.3rem;
+    }
+    to {
+        position: absolute;
+        left: 50%;
+        top: 20%;
+        transform: translate(-50%, -50%);
+        font-size: 2.6rem;
+    }
+}
+
+.reaction img {
+    display: none;
+    height: 300px;
+    width: max(350px, 40%);
+    border-radius: 20px;
+    border: 10px solid gold;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+@media (min-width: 1000px) {
+    .reaction img {
+        height: 400px;
+    }
+}
+
+.theEnd {
+    z-index: 5;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    border: 1000px solid rgb(41, 41, 41);
+    background-color: transparent;
+    box-shadow: inset 0px 0px 50px 0 rgb(41, 41, 41);
+    display: none;
+}
+
+button {
+    z-index: 10;
+    font-family: "Work Sans", sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px 30px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    letter-spacing: 2px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: none;
+    opacity: 0;
+    animation: showingBtn 5s forwards;
+}
+
+@keyframes ending {
+    0% {
+        height: 0;
+        width: 0;
+        border-radius: 50%;
+    }
+    100% {
+        height: 1500px;
+        width: 1500px;
+        border-radius: 50%;
+    }
+}
+
+@keyframes showingBtn {
+    0% {
+        opacity: 0;
+        backdrop-filter: blur(20px);
+    }
+    100% {
+        opacity: 1;
+        backdrop-filter: blur(0);
+    }
+}

@@ -4,6 +4,8 @@
 
 quiz game, to test your knowledge
 
+## => [Live Demo](https://issam-hub.github.io/quiz-game/)
+
 Made By
 * HTML
 * CSS
